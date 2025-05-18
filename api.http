@@ -1,0 +1,138 @@
+### Signup
+POST http://localhost:3001/api/signup
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "john2@gmail.com",
+    "password": "123456"
+}
+
+### Login
+POST http://localhost:3001/api/login
+Content-Type: application/json
+
+{
+    "email": "john@gmail.com",
+    "password": "123456"
+}
+
+###
+
+@auth_token = Authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDc4MjE0MjcsInN1YiI6Mn0.2g2NypNyBRI267qnaNbMdkX153ki2KuYHF_8zSvYTmo; Path=/; Max-Age=2592000; HttpOnly; SameSite=Lax
+
+### Logout
+POST http://localhost:3001/api/logout
+Cookie: {{auth_token}}
+
+### Create Category
+POST http://localhost:3001/api/categories/create
+Cookie: {{auth_token}}
+Content-Type: application/json
+
+{
+    "name": "National 6"
+}
+
+### Get All Categories
+GET http://localhost:3001/api/categories
+Cookie: {{auth_token}}
+
+### Edit Category
+GET http://localhost:3001/api/categories/1/edit
+Cookie: {{auth_token}}
+
+### Update Category
+PUT http://localhost:3001/api/categories/1/update
+Cookie: {{auth_token}}
+Content-Type: application/json
+
+{
+    "name": "Sports"
+}
+
+### Soft Delete Category
+DELETE http://localhost:3001/api/categories/1/delete
+Cookie: {{auth_token}}
+
+### Get All Trashed Categories
+GET http://localhost:3001/api/categories/all-trash
+Cookie: {{auth_token}}
+
+### Permanent Delete Category
+DELETE http://localhost:3001/api/categories/delete-permanent/1
+Cookie: {{auth_token}}
+
+### Create Post
+POST http://localhost:3001/api/posts/create
+Cookie: {{auth_token}}
+Content-Type: application/json
+
+{
+    "title": "Awesome post",
+    "body": "This is the awesome post details",
+    "categoryId": 2
+}
+
+### Get All Posts
+GET http://localhost:3001/api/posts
+Cookie: {{auth_token}}
+
+### Show Single Post
+GET http://localhost:3001/api/posts/1/show
+Cookie: {{auth_token}}
+
+### Edit Post
+GET http://localhost:3001/api/posts/1/edit
+Cookie: {{auth_token}}
+
+### Update Post
+PUT http://localhost:3001/api/posts/1/update
+Cookie: {{auth_token}}
+Content-Type: application/json
+
+{
+    "title": "Hello World",
+    "body": "This is the hello world post details",
+    "categoryId": 6
+}
+
+### Soft Delete Post
+DELETE http://localhost:3001/api/posts/1/delete
+Cookie: {{auth_token}}
+
+### Get All Trashed Posts
+GET http://localhost:3001/api/posts/all-trash
+Cookie: {{auth_token}}
+
+### Permanent Delete Post
+DELETE http://localhost:3001/api/posts/delete-permanent/1
+Cookie: {{auth_token}}
+
+### Create Comment
+POST http://localhost:3001/api/posts/1/comment/store
+Cookie: {{auth_token}}
+Content-Type: application/json
+
+{
+    "postId": 1,
+    "body": "This is a comment"
+}
+
+### Edit Comment
+GET http://localhost:3001/api/posts/1/comment/1/edit
+Cookie: {{auth_token}}
+
+### Update Comment
+PUT http://localhost:3001/api/posts/1/comment/1/update
+Cookie: {{auth_token}}
+Content-Type: application/json
+
+{
+    "postId": 1,
+    "body": "This is a updated comment"
+}
+
+### Delete Comment
+DELETE http://localhost:3001/api/posts/1/comment/1/delete
+Cookie: {{auth_token}}
