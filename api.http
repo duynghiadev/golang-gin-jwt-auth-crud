@@ -3,8 +3,8 @@ POST http://localhost:3001/api/signup
 Content-Type: application/json
 
 {
-    "name": "John Doe",
-    "email": "john2@gmail.com",
+    "name": "John Doe 4",
+    "email": "john4@gmail.com",
     "password": "123456"
 }
 
@@ -19,7 +19,7 @@ Content-Type: application/json
 
 ###
 
-@auth_token = Authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDc4MjE0MjcsInN1YiI6Mn0.2g2NypNyBRI267qnaNbMdkX153ki2KuYHF_8zSvYTmo; Path=/; Max-Age=2592000; HttpOnly; SameSite=Lax
+@auth_token = Authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTAyMTQ1NDYsInN1YiI6Mn0.jKkNjZS2L8pBbpQ5mI_3Dq1CKvRHwFjRcp2k6sEM_LI; Path=/; Max-Age=2592000; HttpOnly; SameSite=Lax
 
 ### Logout
 POST http://localhost:3001/api/logout
@@ -31,7 +31,7 @@ Cookie: {{auth_token}}
 Content-Type: application/json
 
 {
-    "name": "National 6"
+    "name": "National 7"
 }
 
 ### Get All Categories
@@ -39,16 +39,16 @@ GET http://localhost:3001/api/categories
 Cookie: {{auth_token}}
 
 ### Edit Category
-GET http://localhost:3001/api/categories/1/edit
+GET http://localhost:3001/api/categories/3/edit
 Cookie: {{auth_token}}
 
 ### Update Category
-PUT http://localhost:3001/api/categories/1/update
+PUT http://localhost:3001/api/categories/3/update
 Cookie: {{auth_token}}
 Content-Type: application/json
 
 {
-    "name": "Sports"
+    "name": "Sports 2 updated"
 }
 
 ### Soft Delete Category
@@ -60,7 +60,7 @@ GET http://localhost:3001/api/categories/all-trash
 Cookie: {{auth_token}}
 
 ### Permanent Delete Category
-DELETE http://localhost:3001/api/categories/delete-permanent/1
+DELETE http://localhost:3001/api/categories/delete-permanent/2
 Cookie: {{auth_token}}
 
 ### Create Post
@@ -71,7 +71,7 @@ Content-Type: application/json
 {
     "title": "Awesome post",
     "body": "This is the awesome post details",
-    "categoryId": 2
+    "categoryId": 3
 }
 
 ### Get All Posts
