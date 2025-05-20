@@ -1,8 +1,9 @@
 package tests
 
 import (
-	"github.com/gin-gonic/gin"
 	"testing"
+
+	"github.com/gin-gonic/gin"
 )
 
 func TestCreatUser(t *testing.T) {

@@ -1,8 +1,13 @@
 package controllers
 
 import (
+	"net/http"
+	"os"
+	"strconv"
+	"time"
+
 	"github.com/RakibSiddiquee/golang-gin-jwt-auth-crud/db/initializers"
-	"github.com/RakibSiddiquee/golang-gin-jwt-auth-crud/internal/format-errors"
+	format_errors "github.com/RakibSiddiquee/golang-gin-jwt-auth-crud/internal/format-errors"
 	"github.com/RakibSiddiquee/golang-gin-jwt-auth-crud/internal/models"
 	"github.com/RakibSiddiquee/golang-gin-jwt-auth-crud/internal/pagination"
 	"github.com/RakibSiddiquee/golang-gin-jwt-auth-crud/internal/validations"
@@ -10,10 +15,6 @@ import (
 	"github.com/go-playground/validator/v10"
 	"github.com/golang-jwt/jwt/v5"
 	"golang.org/x/crypto/bcrypt"
-	"net/http"
-	"os"
-	"strconv"
-	"time"
 )
 
 // Signup function is used to create a user or signup a user

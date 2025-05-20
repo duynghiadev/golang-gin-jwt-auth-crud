@@ -1,10 +1,11 @@
 package tests
 
 import (
+	"log"
+
 	"github.com/RakibSiddiquee/golang-gin-jwt-auth-crud/db/initializers"
 	"github.com/RakibSiddiquee/golang-gin-jwt-auth-crud/internal/models"
 	"github.com/joho/godotenv"
-	"log"
 )
 
 // DatabaseRefresh runs fresh migration

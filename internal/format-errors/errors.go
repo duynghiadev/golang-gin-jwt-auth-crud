@@ -2,9 +2,10 @@ package format_errors
 
 import (
 	"errors"
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
-	"net/http"
 )
 
 func RecordNotFound(c *gin.Context, err error, errMessage ...string) {

@@ -1,8 +1,11 @@
 package controllers
 
 import (
+	"net/http"
+	"strconv"
+
 	"github.com/RakibSiddiquee/golang-gin-jwt-auth-crud/db/initializers"
-	"github.com/RakibSiddiquee/golang-gin-jwt-auth-crud/internal/format-errors"
+	format_errors "github.com/RakibSiddiquee/golang-gin-jwt-auth-crud/internal/format-errors"
 	"github.com/RakibSiddiquee/golang-gin-jwt-auth-crud/internal/helpers"
 	"github.com/RakibSiddiquee/golang-gin-jwt-auth-crud/internal/models"
 	"github.com/RakibSiddiquee/golang-gin-jwt-auth-crud/internal/pagination"
@@ -10,8 +13,6 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
 	"gorm.io/gorm"
-	"net/http"
-	"strconv"
 )
 
 // CreatePost creates a post
